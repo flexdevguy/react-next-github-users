@@ -1,10 +1,24 @@
 "use client";
-import { Button } from "@mui/material";
+import { useState, useEffect } from "react";
+import { AppBar, Box, Button, IconButton, Toolbar } from "@mui/material";
+import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 
 export default function UsersLayout({ children }) {
+  //   useEffect(() => {
+  //     const fetchUsers = async () => {
+  //       try {
+  //         const response = await axios.get("https://api.github.com/users");
+  //         setUsers(response.data);
+  //       } catch (error) {
+  //         console.error("Error fetching GitHub users:", error);
+  //       }
+  //     };
+
+  //     fetchUsers();
+  //   }, [children]);
   return (
     <section>
-      <nav>
+      {/* <nav>
         <Button
           onClick={() => {
             history.back();
@@ -12,8 +26,24 @@ export default function UsersLayout({ children }) {
         >
           Back
         </Button>
-      </nav>
-      {children}
+      </nav> */}
+      <Box sx={{ flexGrow: 1 }}>
+        <AppBar position="static">
+          <Toolbar>
+            <IconButton
+              size="large"
+              edge="start"
+              color="inherit"
+              aria-label="menu"
+              sx={{ mr: 2 }}
+              onClick={() => history.back()}
+            >
+              <ArrowBackIcon />
+            </IconButton>
+          </Toolbar>
+        </AppBar>
+        {children}
+      </Box>
     </section>
   );
 }

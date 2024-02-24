@@ -1,7 +1,3 @@
-import Image from "next/image";
-
-export default function Home() {
-  return (
-    <div>details</div>
-  );
+export default function Details() {
+  return <div>details</div>;
 }

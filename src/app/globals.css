@@ -6,6 +6,12 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+
+  --light-cyan: #6DCCF2;
+  --celestial-blue: #0367A6;
+  --celestial-blue-light:#1A90D9;
+  --maya-blue: #29A7D9;
+  --gray: #F2F2F2;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -18,12 +24,7 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background: var(--gray);
 }
 
 @layer utilities {

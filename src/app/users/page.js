@@ -45,6 +45,15 @@ export default function Home() {
     };
   }, []);
 
+  //TODO: handle pagination via link header
+  const linkHeader = `<https://api.github.com/users?per_page=10&page=2&since=19>; rel="next", <https://api.github.com/users{?since}>; rel="first"`; //response.headers.link;
+  const paginationLinks = linkHeader.split(",").reduce((acc, link) => {
+    const [url, rel] = link.split(";").map((part) => part.trim());
+    const key = rel.replace(/"/g, "").split("=")[1];
+    acc[key] = url.slice(1, -1); // Removing angle brackets from the URL
+    return acc;
+  }, {});
+
   const { data, error, isLoading } = useSWR(
     `https://api.github.com/users?per_page=10&page=${page}`,
     fetcher

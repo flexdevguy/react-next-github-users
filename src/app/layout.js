@@ -1,6 +1,5 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { AppBar, Box, IconButton, Toolbar } from "@mui/material";
 
 const inter = Inter({ subsets: ["latin"] });
 

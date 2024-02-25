@@ -27,7 +27,7 @@ export default function UsersLayout({ children }) {
           Back
         </Button>
       </nav> */}
-      <Box sx={{ flexGrow: 1 }}>
+      <Box sx={{ height: "100vh" }} className="scrollArea">
         <AppBar position="static">
           <Toolbar>
             <IconButton
